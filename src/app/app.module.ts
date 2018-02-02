@@ -8,17 +8,21 @@ import { BaseComponent } from './base/base.component';
 import { OverlayInnerComponent } from './overlay-inner/overlay-inner.component';
 
 import {OverlayModule} from '@angular/cdk/overlay';
+import {PortalModule} from '@angular/cdk/portal';
+import { CdkOverlayTemplateComponent } from './cdk-overlay-template/cdk-overlay-template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BaseComponent,
-    OverlayInnerComponent
+    OverlayInnerComponent,
+    CdkOverlayTemplateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    OverlayModule
+    OverlayModule,
+    PortalModule
   ],
   entryComponents: [
     OverlayInnerComponent

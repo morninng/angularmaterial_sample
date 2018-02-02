@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Injector } from '@angular/core';
 
 import { Overlay, OverlayRef, OverlayConfig, ConnectedPositionStrategy, OverlayContainer  } from '@angular/cdk/overlay';
-import { ComponentPortal } from '@angular/cdk/portal';
+import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
 
 import { OverlayInnerComponent } from '../overlay-inner/overlay-inner.component';
 
@@ -35,6 +35,10 @@ export class BaseComponent implements OnInit {
     });
 
     this.overlayRef = this.overlay.create(config);
+    // const config2 = {};
+    // const injectionTokens = new WeakMap();
+    // injectionTokens.set('overray_ref', this.overlayRef );
+    // const injector: Injector = new PortalInjector(config, )
     const Portal = new ComponentPortal(OverlayInnerComponent);
     this.overlayRef.attach(Portal);
 
